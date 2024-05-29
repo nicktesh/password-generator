@@ -1,0 +1,331 @@
+@import "variables";
+@import "mixins";
+
+// Main Styles
+body {
+  font-family: $font-primary;
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+  font-family: $font-primary;
+  line-height: $body-font-line-height;
+  letter-spacing: $body-font-letter-spacing;
+  position: relative;
+  background: radial-gradient(circle at 0% 0%, rgba(83, 67, 255, 0.2), transparent 25%), radial-gradient(circle at 0% 100%, rgba(186, 24, 173, 0.15), transparent 40%), radial-gradient(circle at 100% 0%, rgba(186, 24, 173, 0.1), transparent 25%), radial-gradient(circle at 100% 100%, rgba(83, 67, 255, 0.2), transparent 40%);
+  background-color: $color-dark-blue; /* Fallback color */
+  backdrop-filter: blur(10px);
+  color: $color-white;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 1s;
+  transition-delay: 0.2s;
+  @include md-screen-down {
+    font-size: $p-mobile-size;
+  }
+  &.scroll {
+    overflow-y: hidden;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-family: $font-secondary;
+}
+h1 {
+  font-size: $h1-size;
+  font-weight: $h1-weight;
+  color: $h1-color;
+  @include md-screen-down {
+    font-size: $h1-mobile-size;
+  }
+}
+h2 {
+  font-size: $h2-size;
+  font-weight: $h2-weight;
+  color: $h2-color;
+  @include md-screen-down {
+    font-size: $h2-mobile-size;
+  }
+}
+h3 {
+  font-size: $h3-size;
+  font-weight: $h3-weight;
+  color: $h3-color;
+  @include md-screen-down {
+    font-size: $h3-mobile-size;
+  }
+}
+h4 {
+  font-size: $h4-size;
+  font-weight: $h4-weight;
+  color: $h4-color;
+  @include md-screen-down {
+    font-size: $h4-mobile-size;
+  }
+}
+h5 {
+  font-size: $h5-size;
+  font-weight: $h5-weight;
+  color: $h5-color;
+  @include md-screen-down {
+    font-size: $h5-mobile-size;
+  }
+}
+h6 {
+  font-size: $h6-size;
+  font-weight: $h6-weight;
+  color: $h6-color;
+  @include md-screen-down {
+    font-size: $h6-mobile-size;
+  }
+}
+p {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: $p-size;
+  font-weight: $p-weight;
+  font-family: $font-primary;
+  color: $p-color;
+  @include md-screen-down {
+    font-size: $p-mobile-size;
+  }
+}
+a {
+  font-size: $a-size;
+  font-weight: $a-weight;
+  font-family: $font-primary;
+  color: $a-color;
+  text-decoration: underline;
+  @include md-screen-down {
+    font-size: $a-mobile-size;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: $color-primary;
+  }
+}
+img {
+  width: 100%;
+}
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+.module {
+  padding: 100px 0;
+  @include md-screen-down {
+    padding: 50px 0;
+  }
+  .module-content {
+    margin-bottom: 30px;
+    i {
+      color: $color-black;
+      font-weight: 700;
+    }
+  }
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.bg-neutral {
+  background-color: $color-neutral;
+}
+.container-fluid {
+  padding: 0;
+}
+.container {
+  @media (min-width: 1350px) {
+    max-width: 1350px !important;
+  }
+}
+.container-xl {
+  @media (min-width: 1450px) {
+    max-width: 1450px !important;
+  }
+}
+.pt-0 {
+  padding-top: 0;
+}
+.pb-0 {
+  padding-bottom: 0;
+}
+.p-0 {
+  padding: 0;
+}
+.shadow {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.025), 0 1px 0 rgba(0, 0, 0, 0.05), 0 0 8px rgba(0, 0, 0, 0.03), 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+// Primary Button
+.primary-btn {
+  display: inline-block;
+  background: $color-pink;
+  background: linear-gradient(45deg, $color-pink 0%, $color-purple 100%);
+  color: $color-white;
+  border: 2px solid $color-pink;
+  border-radius: 10px;
+  outline: none;
+  width: fit-content;
+  padding: 8px 20px;
+  font-size: 16px;
+  font-family: $font-secondary;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  &:hover,
+  &:active,
+  &:focus {
+    background: linear-gradient(45deg, $color-purple 0%, $color-pink 100%);
+    border: 2px solid $color-purple;
+  }
+}
+// Header
+header {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  .container-fluid {
+    padding: 0;
+  }
+  .row-header {
+    padding-bottom: 50px;
+    @include lg-screen-down {
+      padding-bottom: 30px;
+    }
+  }
+}
+// Footer
+footer {
+  text-align: center;
+  padding: 20px 0;
+  p {
+    color: $color-white;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+}
+// Row Password Generator
+.module.row-password-generator {
+  padding-top: 0;
+  .form-group {
+    input[type="checkbox"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid $color-white;
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+    }
+    input[type="checkbox"]:checked {
+      background: $color-pink;
+      background: linear-gradient(45deg, $color-pink 0%, $color-purple 100%);
+      border-color: $color-pink;
+    }
+    input[type="checkbox"]:checked::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid $color-white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    input[type="checkbox"]:hover {
+      border-color: $color-pink;
+    }
+    input[type="checkbox"]:focus {
+      border-color: $color-pink;
+      box-shadow: 0 0 3px $color-pink;
+    }
+    input[type="number"],
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 2px solid $color-white;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: $color-pink;
+      }
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    #special-characters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      label {
+        flex: 1 1 30%;
+        display: flex;
+        align-items: center;
+        font-weight: normal;
+        input {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  .password-display {
+    position: relative;
+    margin-top: 20px;
+    h2 {
+      font-size: 22px;
+      margin: 0 0 5px;
+    }
+    p {
+      display: flex;
+      align-items: center;
+      background: #f4f4f4;
+      color: $color-black;
+      font-weight: 700;
+      padding: 10px;
+      height: 50px;
+      border: 2px solid $color-pink;
+      border-radius: 4px;
+      word-break: break-all;
+      margin-bottom: 0;
+      &:after {
+        @include material-icon();
+        content: "content_copy";
+        position: absolute;
+        right: 10px;
+      }
+    }
+  }
+  .tooltip-custom {
+    display: none;
+    background-color: $color-purple;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+}

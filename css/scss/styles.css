@@ -251,6 +251,7 @@ footer {
       width: 100%;
       padding: 8px;
       margin-bottom: 10px;
+      color: #000;
       border: 2px solid #fff;
       border-radius: 4px;
       appearance: none;
@@ -258,6 +259,8 @@ footer {
       background: #fff; }
       .module.row-password-generator .form-group .select-wrapper select:hover, .module.row-password-generator .form-group .select-wrapper select:active, .module.row-password-generator .form-group .select-wrapper select:focus {
         border-color: #bd17ab; }
+      .module.row-password-generator .form-group .select-wrapper select option {
+        color: #000; }
     .module.row-password-generator .form-group .select-wrapper::after {
       font-family: "Material Symbols Outlined";
       content: "arrow_drop_down";

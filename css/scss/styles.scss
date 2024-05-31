@@ -280,6 +280,7 @@ footer {
         width: 100%;
         padding: 8px;
         margin-bottom: 10px;
+        color: $color-black;
         border: 2px solid $color-white;
         border-radius: 4px;
         appearance: none;
@@ -289,6 +290,9 @@ footer {
         &:active,
         &:focus {
           border-color: $color-pink;
+        }
+        option {
+          color: $color-black;
         }
       }
       &::after {

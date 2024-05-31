@@ -218,6 +218,10 @@ footer {
 .module.row-password-generator {
   padding-top: 0;
   .form-group {
+    #custom-word-position-label,
+    #custom-word-position-wrapper {
+      display: none;
+    }
     input[type="checkbox"] {
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -254,8 +258,7 @@ footer {
       box-shadow: 0 0 3px $color-pink;
     }
     input[type="number"],
-    input[type="text"],
-    select {
+    input[type="text"] {
       width: 100%;
       padding: 8px;
       margin-bottom: 10px;
@@ -267,6 +270,36 @@ footer {
       &:active,
       &:focus {
         border-color: $color-pink;
+      }
+    }
+    .select-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 2px solid $color-white;
+        border-radius: 4px;
+        appearance: none;
+        -webkit-appearance: none;
+        background: $color-white;
+        &:hover,
+        &:active,
+        &:focus {
+          border-color: $color-pink;
+        }
+      }
+      &::after {
+        @include material-icon();
+        content: "arrow_drop_down";
+        color: $color-black;
+        font-weight: 700;
+        position: absolute;
+        right: 10px;
+        top: 17%;
+        pointer-events: none;
       }
     }
     label {

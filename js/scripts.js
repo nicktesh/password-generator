@@ -17,6 +17,7 @@ function updateCopyrightYear() {
 // Update the copyright year on load
 document.addEventListener("DOMContentLoaded", () => {
   updateCopyrightYear();
+  setupCustomWordListener();
 });
 
 /**
@@ -28,8 +29,11 @@ document.getElementById("generate").addEventListener("click", () => {
   const specialCharacters = Array.from(document.querySelectorAll("#special-characters input:checked"))
     .map((checkbox) => checkbox.value)
     .join("");
-  const customWord = document.getElementById("custom-word").value;
+  let customWord = document.getElementById("custom-word").value;
   const customWordPosition = document.getElementById("custom-word-position").value;
+
+  // Remove spaces from the custom word
+  customWord = customWord.replace(/\s+/g, "");
 
   const password = generatePassword(length, specialCharacters, customWord, customWordPosition);
   document.getElementById("password").textContent = password;
@@ -83,4 +87,23 @@ function showTooltip() {
   setTimeout(() => {
     tooltip.style.display = "none";
   }, 3000);
+}
+
+/**
+ * Function to show/hide custom word position based on custom word input
+ */
+function setupCustomWordListener() {
+  const customWordInput = document.getElementById("custom-word");
+  const customWordPositionLabel = document.getElementById("custom-word-position-label");
+  const customWordPositionWrapper = document.getElementById("custom-word-position-wrapper");
+
+  customWordInput.addEventListener("input", () => {
+    if (customWordInput.value.trim() !== "") {
+      customWordPositionLabel.style.display = "block";
+      customWordPositionWrapper.style.display = "block";
+    } else {
+      customWordPositionLabel.style.display = "none";
+      customWordPositionWrapper.style.display = "none";
+    }
+  });
 }

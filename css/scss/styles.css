@@ -196,6 +196,9 @@ footer {
 
 .module.row-password-generator {
   padding-top: 0; }
+  .module.row-password-generator .form-group #custom-word-position-label,
+  .module.row-password-generator .form-group #custom-word-position-wrapper {
+    display: none; }
   .module.row-password-generator .form-group input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -227,8 +230,7 @@ footer {
     border-color: #bd17ab;
     box-shadow: 0 0 3px #bd17ab; }
   .module.row-password-generator .form-group input[type="number"],
-  .module.row-password-generator .form-group input[type="text"],
-  .module.row-password-generator .form-group select {
+  .module.row-password-generator .form-group input[type="text"] {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -239,11 +241,32 @@ footer {
     .module.row-password-generator .form-group input[type="number"]:hover, .module.row-password-generator .form-group input[type="number"]:active, .module.row-password-generator .form-group input[type="number"]:focus,
     .module.row-password-generator .form-group input[type="text"]:hover,
     .module.row-password-generator .form-group input[type="text"]:active,
-    .module.row-password-generator .form-group input[type="text"]:focus,
-    .module.row-password-generator .form-group select:hover,
-    .module.row-password-generator .form-group select:active,
-    .module.row-password-generator .form-group select:focus {
+    .module.row-password-generator .form-group input[type="text"]:focus {
       border-color: #bd17ab; }
+  .module.row-password-generator .form-group .select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%; }
+    .module.row-password-generator .form-group .select-wrapper select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 2px solid #fff;
+      border-radius: 4px;
+      appearance: none;
+      -webkit-appearance: none;
+      background: #fff; }
+      .module.row-password-generator .form-group .select-wrapper select:hover, .module.row-password-generator .form-group .select-wrapper select:active, .module.row-password-generator .form-group .select-wrapper select:focus {
+        border-color: #bd17ab; }
+    .module.row-password-generator .form-group .select-wrapper::after {
+      font-family: "Material Symbols Outlined";
+      content: "arrow_drop_down";
+      color: #000;
+      font-weight: 700;
+      position: absolute;
+      right: 10px;
+      top: 17%;
+      pointer-events: none; }
   .module.row-password-generator .form-group label {
     display: block;
     font-weight: bold;

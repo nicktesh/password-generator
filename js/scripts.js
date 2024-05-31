@@ -10,7 +10,7 @@ function updateCopyrightYear() {
 
   // Ensure the element exists before attempting to update its content
   if (copyrightElement) {
-    copyrightElement.textContent = `© ${year} Nick Tesh - All Rights Reserved.`;
+    copyrightElement.textContent = `© Nick Tesh ${year} - All Rights Reserved.`;
   }
 }
 
